@@ -1,9 +1,11 @@
+import menus.*;
+
 public class Main {
 
     private Main(){}; // make this class inaccessible to outsiders
 
     public void execute() {
-        System.out.println("hello");
+        MainVMenu menu = new MainVMenu();
     }
 
     public static void main(String[] args) {

@@ -1,0 +1,31 @@
+1)create room		connections:
+2)join chatroom		---------
+3)friends		---------
+4)settings		*--------
+5)exit
+4
+
+1)mute			defaults??
+2)....
+3)...
+4)back
+1
+
+1)mute			muted:
+2)unmute		------
+3)back			------
+1
+
+enter username: ------
+
+1)mute			muted:
+2)unmute		------
+3)back			------
+3			------
+
+1)create room		connections:
+2)join chatroom		---------
+3)friends		---------
+4)settings		*--------
+5)exit
+5

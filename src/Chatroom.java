@@ -1,12 +1,8 @@
-public class Chatroom {
+public class Chatroom extends Thread {
     // options
     // fields: name of room
     // whitelist/blacklist, connections limit, 
     // private/public
-
-    private class Options {
-        
-    }
 
     private class ChatIn extends Thread {
         public void run() {
@@ -18,6 +14,10 @@ public class Chatroom {
         public void run() {
 
         }
+    }
+
+    public void run() {
+        
     }
 
 }

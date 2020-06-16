@@ -15,18 +15,19 @@ public class Main {
 
     private void execute() {
         buildMenu();
-        mainMenu.execute();
+        MenuAction action;
+        while ((action = mainMenu.choose()) != null) action.execute();
     }
 
     private void buildMenu() {
-        mainMenu.add(new Menu("join chatroom"));
+        mainMenu.add(new Menu("create chatroom"));
         mainMenu.add(new Menu("host chatroom"));
         mainMenu.add(new Menu("enter chatroom"));
 
         Menu friendsMenu = new Menu("manage friends");
-        friendsMenu.add(new Menu("create friend"));
+        friendsMenu.add(new ChatroomAction("create friend", () -> System.out.println("Creating friend")));
         friendsMenu.add(new Menu("delete friend"));
-        friendsMenu.add(new Menu("back"));
+        friendsMenu.add(new MenuReturn("back"));
         mainMenu.add(friendsMenu);
 
         mainMenu.add(new Menu("settings"));

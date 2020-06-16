@@ -23,4 +23,8 @@ public abstract class MenuComponent {
     public void execute() {
         throw new UnsupportedOperationException();
     }
+
+    public MenuAction choose() {
+        throw new UnsupportedOperationException();
+    }
 }

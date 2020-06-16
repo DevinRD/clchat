@@ -18,6 +18,10 @@ public abstract class MenuAction extends MenuComponent {
 
     }
 
+    public MenuAction choose() {
+        return this;
+    }
+
     public String toString() {
         return name;
     }

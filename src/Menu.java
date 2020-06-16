@@ -33,7 +33,9 @@ public class Menu extends MenuComponent {
 
     }
 
-    public void execute() { // FIXME: Figure out how to go back one menu
+    public MenuAction choose() {
+        if (items.size() == 0) return null;
+
         int choice = -1;
         MenuComponent menuChoice;
 
@@ -57,11 +59,12 @@ public class Menu extends MenuComponent {
                 }
             } while (choice == -1);
 
-            menuChoice = items.get(choice - 1);
-            menuChoice.execute();
+            menuChoice = items.get(choice - 1).choose();
+            if (menuChoice instanceof MenuReturn) return null;
 
-        } while (!(menuChoice instanceof MenuReturn));
+        } while (!(menuChoice instanceof MenuAction));
 
+        return (MenuAction) menuChoice;
     }
 
     public void print() {

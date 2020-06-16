@@ -1,14 +1,21 @@
+package menu;
+
 import java.util.ArrayList;
 
 import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class Menu extends MenuComponent {
     
     private String name;
     private ArrayList<MenuComponent> items;
 
+    private static BufferedReader sysIn;
+
     public Menu(String name) {
         this.name = name;
+        sysIn = new BufferedReader(new InputStreamReader(System.in));
         items = new ArrayList<MenuComponent>();
     }
 
@@ -45,7 +52,7 @@ public class Menu extends MenuComponent {
 
                 try {
                     System.out.print("-> ");
-                    choice = Integer.parseInt(Main.sysIn.readLine());
+                    choice = Integer.parseInt(sysIn.readLine());
                     if (choice < 1 || choice > items.size()) throw new Exception();
                 } catch (IOException e) {
                     e.printStackTrace();

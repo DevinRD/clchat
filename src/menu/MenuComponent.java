@@ -1,3 +1,5 @@
+package menu;
+
 public abstract class MenuComponent {
 
     public void add(MenuComponent component) {

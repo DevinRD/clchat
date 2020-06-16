@@ -1,3 +1,5 @@
+package menu;
+
 public abstract class MenuAction extends MenuComponent {
 
     private String name;

@@ -1,3 +1,5 @@
+import menu.*;
+
 public class ChatroomAction extends MenuAction {
 
     public interface Action {

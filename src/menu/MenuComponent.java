@@ -2,11 +2,11 @@ package menu;
 
 public abstract class MenuComponent {
 
-    public void add(MenuComponent component) {
+    public Menu add(MenuComponent component) {
         throw new UnsupportedOperationException();
     }
 
-    public void remove(MenuComponent component) {
+    public Menu remove(MenuComponent component) {
         throw new UnsupportedOperationException();
     }
 

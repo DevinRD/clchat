@@ -1,6 +1,6 @@
-import menu.*;
+package menu;
 
-public class ChatroomAction extends MenuAction {
+public class GeneralAction extends MenuAction {
 
     public interface Action {
         void execute();
@@ -8,7 +8,7 @@ public class ChatroomAction extends MenuAction {
 
     private Action action;
 
-    public ChatroomAction(String name, Action action) {
+    public GeneralAction(String name, Action action) {
         super(name);
         this.action = action;
     }
@@ -16,5 +16,4 @@ public class ChatroomAction extends MenuAction {
     public void execute() {
         action.execute();
     }
-
 }

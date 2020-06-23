@@ -32,12 +32,14 @@ public class Menu extends MenuComponent {
         name = n;
     }
 
-    public void add(MenuComponent item) {
+    public Menu add(MenuComponent item) {
         items.add(item);
+        return this;
     }
 
-    public void remove(Menu item) { // TODL: 
-
+    public Menu remove(int index) {
+        items.remove(index);
+        return this;
     }
 
     public MenuAction choose() {

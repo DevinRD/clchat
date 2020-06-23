@@ -22,18 +22,33 @@ public class Main {
     }
 
     private void buildMenu() {
-        mainMenu.add(new Menu("create chatroom"));
-        mainMenu.add(new Menu("host chatroom"));
-        mainMenu.add(new Menu("enter chatroom"));
+        Menu tempMenu = null;
+        
+        /*
+        tempMenu = new Menu("host room");
+        tempMenu.add(new GeneralAction("new room", () -> System.out.println("Creating new room")));
+        tempMenu.add(new GeneralAction("existing room", () -> System.out.println("Starting existing room")));
+        tempMenu.add(new MenuReturn("back"));
+        mainMenu.add(tempMenu); // "host room"
+        */
 
-        Menu friendsMenu = new Menu("manage friends");
-        friendsMenu.add(new ChatroomAction("create friend", () -> System.out.println("Creating friend")));
-        friendsMenu.add(new Menu("delete friend"));
-        friendsMenu.add(new MenuReturn("back"));
-        mainMenu.add(friendsMenu);
+        mainMenu.add(new HostChatroomAction("host room"));
 
-        mainMenu.add(new Menu("settings"));
-        mainMenu.add(new MenuReturn("return"));
+        mainMenu.add(new GeneralAction("join room", () -> System.out.println("Joining room")));
+
+        tempMenu = new Menu("manage aliases");
+        tempMenu.add(new GeneralAction("create alias", () -> System.out.println("Creating alias")));
+        tempMenu.add(new GeneralAction("edit alias", () -> System.out.println("Editing alias")));
+        tempMenu.add(new GeneralAction("delete alias", () -> System.out.println("Deleting alias")));
+        tempMenu.add(new MenuReturn("back"));
+        mainMenu.add(tempMenu); // "manage aliases"
+
+        tempMenu = new Menu("settings");
+        tempMenu.add(new GeneralAction("mute ip address", () -> System.out.println("ip address has been muted")));
+        tempMenu.add(new MenuReturn("back"));
+        mainMenu.add(tempMenu); // "settings"
+
+        mainMenu.add(new MenuReturn("exit"));
     }
 
     public static void main(String[] args) {
